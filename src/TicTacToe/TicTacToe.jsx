@@ -1,15 +1,32 @@
 import './TicTacToe.css';
 import Space from '../Space/Space';
-const TicTacToe = () => {
-  const spaces = [...Array(9)];
+import React, { useEffect, useState } from 'react';
 
-  spaces[2] = 'x';
-  spaces[0] = 'o';
+const TicTacToe = () => {
+  const [marks, setMarks] = useState([...Array(9)]);
+
+  const playSpace = (idx, mark) => {
+    // console.log(idx, mark);
+
+    marks[idx] = 'x'; // mark;
+    const playedSpace = document.querySelector(`#t${idx}`);
+    playedSpace.textContent = 'x';
+
+    setMarks(marks);
+    console.log(marks);
+  };
+
+  //   useEffect(() => {
+  //     playSpace();
+  //   }, [marks]);
+
+  //   marks[2] = 'x';
+  //   marks[0] = 'o';
 
   return (
     <div className="TicTacToe">
-      {spaces.map((space, idx) => {
-        return <Space mark={spaces[idx]} />;
+      {marks.map((mark, idx) => {
+        return <Space key={idx} playSpace={playSpace} mark={mark} idx={idx} />;
       })}
     </div>
   );
