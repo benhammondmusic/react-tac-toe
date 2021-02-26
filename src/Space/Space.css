@@ -1,8 +1,10 @@
 .Space {
   width: 100px;
   height: 100px;
-  background-color: aqua;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  font-size: 4em;
 }
