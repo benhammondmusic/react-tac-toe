@@ -11,6 +11,10 @@
   color: white;
 }
 
+:focus {
+  outline: none;
+}
+
 .App-link {
   color: #61dafb;
 }

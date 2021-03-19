@@ -52,8 +52,12 @@ const TicTacToe = ({ displayWinner }) => {
   };
 
   useEffect(() => {
-    // reset if winner
-    if (winner) displayWinner(winner);
+    // send winner up to App and reset
+    if (winner) {
+      displayWinner(winner);
+      setMarks([...Array(9)]);
+      setMarkToPlay(winner === 'X' ? 'O' : 'X');
+    }
   }, [winner]);
 
   // update the board display in DOM
