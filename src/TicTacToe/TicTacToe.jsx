@@ -64,6 +64,7 @@ const TicTacToe = ({ displayWinner }) => {
       displayWinner(winner);
       setMarks([...Array(9)]);
       setMarkToPlay(winner === 'X' ? 'O' : 'X');
+      setTurnsPlayed(0);
     }
   }, [winner]);
 
@@ -73,6 +74,7 @@ const TicTacToe = ({ displayWinner }) => {
       displayWinner('React');
       setMarks([...Array(9)]);
       setMarkToPlay('X');
+      setTurnsPlayed(0);
     }
   }, [turnsPlayed]);
 
