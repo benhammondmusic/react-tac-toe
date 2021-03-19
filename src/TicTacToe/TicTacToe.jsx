@@ -2,10 +2,10 @@ import './TicTacToe.css';
 import Space from '../Space/Space';
 import React, { useEffect, useState } from 'react';
 
-const TicTacToe = () => {
+const TicTacToe = ({ displayWinner }) => {
   const [marks, setMarks] = useState([...Array(9)]);
   const [markToPlay, setMarkToPlay] = useState('X');
-  let winner = null;
+  const [winner, setWinner] = useState(null);
 
   const checkWinner = (marks) => {
     // console.log('checking winner:', marks);
@@ -34,6 +34,8 @@ const TicTacToe = () => {
     // BACKSLASH
     if (marks[0] + marks[4] + marks[8] === 'XXX') return 'X';
     if (marks[0] + marks[4] + marks[8] === 'OOO') return 'O';
+
+    return null;
   };
 
   const playSpace = (idx) => {
@@ -42,12 +44,17 @@ const TicTacToe = () => {
       // update array in state
       marks[idx] = markToPlay;
       setMarks(marks);
-      winner = checkWinner(marks);
+      setWinner(checkWinner(marks));
 
-      // switch player if no winner
-      winner ? alert('WIN') : setMarkToPlay(markToPlay === 'X' ? 'O' : 'X');
+      // switch player
+      setMarkToPlay(markToPlay === 'X' ? 'O' : 'X');
     }
   };
+
+  useEffect(() => {
+    // reset if winner
+    if (winner) displayWinner(winner);
+  }, [winner]);
 
   // update the board display in DOM
   useEffect(() => {

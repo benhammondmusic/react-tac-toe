@@ -1,7 +1,8 @@
 .Space {
   width: 100px;
   height: 100px;
-  background-color: white;
+  background-color: #282c34;
+  color: #61dafb;
   display: flex;
   align-items: center;
   justify-content: center;
