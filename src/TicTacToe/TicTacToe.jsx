@@ -6,6 +6,10 @@ const TicTacToe = ({ displayWinner }) => {
   const [marks, setMarks] = useState([...Array(9)]);
   const [markToPlay, setMarkToPlay] = useState('X');
   const [winner, setWinner] = useState(null);
+  const [turnsPlayed, setTurnsPlayed] = useState(0);
+
+  const xCursor = { cursor: "url('../x.png')" };
+  const oCursor = `cursor: url("../o.png"), auto`;
 
   const checkWinner = (marks) => {
     // console.log('checking winner:', marks);
@@ -48,6 +52,9 @@ const TicTacToe = ({ displayWinner }) => {
 
       // switch player
       setMarkToPlay(markToPlay === 'X' ? 'O' : 'X');
+
+      // increment turns
+      setTurnsPlayed(turnsPlayed + 1);
     }
   };
 
@@ -59,6 +66,15 @@ const TicTacToe = ({ displayWinner }) => {
       setMarkToPlay(winner === 'X' ? 'O' : 'X');
     }
   }, [winner]);
+
+  useEffect(() => {
+    // check for cats-eye
+    if (turnsPlayed === 9 && !winner) {
+      displayWinner('React');
+      setMarks([...Array(9)]);
+      setMarkToPlay('X');
+    }
+  }, [turnsPlayed]);
 
   // update the board display in DOM
   useEffect(() => {
@@ -81,3 +97,5 @@ const TicTacToe = ({ displayWinner }) => {
 };
 
 export default TicTacToe;
+
+//  ""

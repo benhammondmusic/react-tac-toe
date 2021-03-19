@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import TicTacToe from './TicTacToe/TicTacToe.jsx';
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('Tic-Tac-Toe in that create-react-app style you love to hate.');
 
   const displayWinner = (winner) => {
     setMessage(`${winner} is the winner!`);
@@ -16,12 +16,8 @@ function App() {
       </main>
 
       <footer>
-        <p>
-          Tic-Tac-Toe in that <code>create-react-app</code> style you love to hate.
-        </p>
-        <p>
-          <code>{message}</code>
-        </p>
+        <p>{message}</p>
+
         <a className="App-link" href="https://benhammond.tech">
           benhammond.tech
         </a>
