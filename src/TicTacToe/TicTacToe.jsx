@@ -8,8 +8,8 @@ const TicTacToe = ({ displayWinner }) => {
   const [winner, setWinner] = useState(null);
   const [turnsPlayed, setTurnsPlayed] = useState(0);
 
-  const xCursor = { cursor: "url('../x.png')" };
-  const oCursor = `cursor: url("../o.png"), auto`;
+  // const xCursor = { cursor: "url('../x.png')" };
+  // const oCursor = `cursor: url("../o.png"), auto`;
 
   const checkWinner = (marks) => {
     // console.log('checking winner:', marks);
