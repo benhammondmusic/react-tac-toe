@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-
+  border: none;
+  outline: none;
   background-color: #282c34;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
