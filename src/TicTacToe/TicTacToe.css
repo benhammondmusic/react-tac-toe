@@ -6,7 +6,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 2vh;
+  gap: 3vh 3vh;
+  height: 100%;
 
   /* aspect-ratio: 1 / 1; */
 }
