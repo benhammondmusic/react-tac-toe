@@ -8,12 +8,18 @@
 
 ## Background
 
-Decided to practice my React skills by recreating the classic game; ended up with a goofy yet compelling little app.
+Decided to practice my React skills by recreating the classic tic-tac-toe; ended up with a goofy yet compelling little game.
 
-## Details
+## Tech
 
-- Used functional components and hooks like `useEffect()` and `useState()`.
-- Fixed up the win- and tie-condition timing issues I'd been having.
+- **React:** functional components, `useEffect()` and `useState()` hooks
+- **CSS Grid:** the game board lines are actually the gaps between grid items
+- **CSS Animation / Rotate:** already present for `create-react-app` logo; applied to entire game-board
+
+## Problems Solves
+
+- Fixed up the win- and tie-condition issues I'd been having by using state to store current player's turn info, to keep track of the number of total pieces played, and presence of a winner.
+- Corrected the timing of displaying winner info AFTER winning piece is displayed by incorporating useEffect() and treating DOM manipulation as a side effect of the winner calculation
 - Deployed to Netlify, straightforward using their GitHub integration for CI/CD.
 
 ## Style
