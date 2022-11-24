@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8f10843e-99a1-46e8-8e8d-ab039a2632e8/deploy-status)](https://app.netlify.com/sites/react-tac-toe/deploys)
+
 # React Tac Toe
 
 ### Learning React by Building and Styling the Classic Game
